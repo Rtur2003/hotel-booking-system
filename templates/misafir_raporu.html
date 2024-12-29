@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misafir Raporu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        table th, table td {
+            font-size: 12px;
+        }
+        @page {
+            margin: 1cm;
+        }
+    </style>
+</head>
+<body>
+    <h1>Misafir Raporu ({{ start_date }} - {{ end_date }})</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Misafir ID</th>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Yaş</th>
+                <th>Kimlik</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for misafir in misafirler %}
+            <tr>
+                <td>{{ misafir['MisafirID'] }}</td>
+                <td>{{ misafir['Isim'] }}</td>
+                <td>{{ misafir['Soyisim'] }}</td>
+                <td>{{ misafir['Yas'] }}</td>
+                <td>{{ misafir['Kimlik'] }}</td>
+                <td>{{ misafir['GirisTarihi'] }}</td>
+                <td>{{ misafir['CikisTarihi'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

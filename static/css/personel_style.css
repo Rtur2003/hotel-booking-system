@@ -1,0 +1,111 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Personel Container */
+.personel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav .logout {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #ff4757;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav .logout:hover {
+    background-color: #e84118;
+}
+
+/* Personel Panels */
+.personel-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.personel-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.personel-panel:hover {
+    transform: translateY(-5px);
+}
+
+.personel-panel h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #28a745;
+}
+
+.personel-panel p {
+    font-size: 16px;
+    color: #666;
+}
+
+.personel-panel .btn,
+.personel-panel button {
+    text-decoration: none;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.personel-panel .btn:hover,
+.personel-panel button:hover {
+    background-color: #218838;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+}

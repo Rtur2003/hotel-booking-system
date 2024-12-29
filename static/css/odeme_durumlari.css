@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Arka planı beyaz yapıyoruz */
+    color: #333; /* Yazı rengi daha koyu olacak */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4; /* İçerik arka planını açık gri yapıyoruz */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1e3d58; /* Başlık rengi koyu mavi */
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd; /* Gri renkli border */
+}
+
+th {
+    background-color: #1e3d58; /* Başlık satırı için koyu mavi */
+    color: white;
+}
+
+select {
+    padding: 5px;
+    background-color: #1e3d58; /* Seçim kutusu koyu mavi */
+    color: white;
+    border: 1px solid #1e3d58;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #6fa3f2; /* Focus olunduğunda mavi renkle belirginleşir */
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktif Misafirler</title>
+    <link rel="stylesheet" href="static/css/aktif_misafirler.css"> <!-- CSS dosyasını bağlantılandır -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="personel-container">
+        <header>
+            <h1>Aktif Misafirler</h1>
+            <nav>
+                <a href="/personel_home" class="back-btn">Geri</a>
+            </nav>
+        </header>
+
+        <div class="misafir-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Misafir ID</th>
+                        <th>İsim</th>
+                        <th>Soyisim</th>
+                        <th>Yaş</th>
+                        <th>Kimlik No</th>
+                        <th>Giriş Tarihi</th>
+                        <th>Çıkış Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody id="misafirler-tbody">
+                    <!-- Misafirler burada listelenecek -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="static/js/aktif_misafirler.js"></script> <!-- JavaScript dosyasını bağlantılandır -->
+</body>
+</html>

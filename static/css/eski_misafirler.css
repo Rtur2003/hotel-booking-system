@@ -1,0 +1,62 @@
+/* Genel Stil */
+body {
+    background-color: white; /* Arka plan beyaz */
+    color: #333; /* Yazı rengi koyu gri */
+    font-family: Arial, sans-serif;
+}
+
+/* Koyu mavi başlık */
+h1 {
+    color: #003366; /* Koyu mavi */
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Tablo Stil */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablo başlık stil */
+th {
+    background-color: #003366; /* Koyu mavi */
+    color: white; /* Beyaz yazı */
+    padding: 10px;
+}
+
+/* Tablo hücre stil */
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Tablo satır hover efekti */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Açık gri */
+}
+
+tr:hover {
+    background-color: #e6f7ff; /* Koyu mavi üzerine açık mavi hover */
+}
+
+/* Buton Stil */
+button {
+    background-color: #003366; /* Koyu mavi */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #00509e; /* Hoverda daha açık mavi */
+}

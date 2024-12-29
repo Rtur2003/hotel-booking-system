@@ -1,0 +1,97 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Tüm input alanlarının eşit boyutlarda olması için */
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* İçerik + padding = toplam genişlik */
+}
+
+/* Şifre kutusu ve göz simgesi */
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px 40px 12px 12px; /* Sağda göz simgesi için boşluk bırak */
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.eye-icon:hover {
+    color: #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.toggle-link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+#login-form, #register-form {
+    display: block;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

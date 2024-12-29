@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eski Misafirler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eski_misafirler.css') }}">
+</head>
+<body>
+
+    <h1>Eski Misafirler</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>MisafirID</th>
+                <th>Isim</th>
+                <th>Soyisim</th>
+                <th>Yas</th>
+                <th>Kimlik</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for misafir in eski_misafirler %}
+            <tr>
+                <td>{{ misafir.MisafirID }}</td>
+                <td>{{ misafir.Isim }}</td>
+                <td>{{ misafir.Soyisim }}</td>
+                <td>{{ misafir.Yas }}</td>
+                <td>{{ misafir.Kimlik }}</td>
+                <td>{{ misafir.GirisTarihi }}</td>
+                <td>{{ misafir.CikisTarihi }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('kayit_duzenle') }}">
+        <button>Geri Dön</button>
+    </a>
+
+</body>
+</html>

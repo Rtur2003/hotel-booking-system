@@ -1,0 +1,21 @@
+// Kullanıcıların rolüne göre filtreleme
+function filterUsers() {
+    const roleFilter = document.getElementById("roleFilter").value;
+    const rows = document.querySelectorAll("#userTable tbody tr");
+
+    rows.forEach(row => {
+        const role = row.cells[4].textContent.toLowerCase();  // 4. sütun: Rol
+        if (roleFilter === "all" || role === roleFilter.toLowerCase()) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+// PDF oluşturma fonksiyonu
+function generatePDF() {
+    const doc = new jsPDF();
+    doc.autoTable({ html: '#userTable' });
+    doc.save('Kullanici_Raporu.pdf');
+}

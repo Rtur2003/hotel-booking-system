@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTYS OTEL - Ana Sayfa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ana_sayfa_style.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="hotel-header">
+            <h1>VTYS OTEL</h1>
+            <button id="reservation-btn" class="reservation-btn">Rezervasyon Yap</button>
+        </div>
+    </header>
+
+    <!-- Otel Banner -->
+    <section class="hotel-banner">
+        <div class="overlay">
+            <h2>Hoş Geldiniz!</h2>
+            <p>VTYS Otel, hayalinizdeki tatili gerçekleştirmeniz için size özel imkanlar sunar.</p>
+            <button class="learn-more-btn">Daha Fazla Bilgi</button>
+        </div>
+        <img src="{{ url_for('static', filename='images/hotel_banner.jpg') }}" alt="Otel Banner">
+    </section>
+
+    <!-- Otel Hakkında -->
+    <section class="about-hotel">
+        <div class="container">
+            <h2>Otelden Bahsedelim</h2>
+            <p>VTYS Otel, modern tasarımı ve lüks olanaklarıyla konuklarına eşsiz bir deneyim sunuyor. Her türlü ihtiyaca cevap veren odalarımız, açık hava restoranlarımız, yüzme havuzlarımız ve spa alanlarımızla konuklarımızı en yüksek standartlarda ağırlıyoruz.</p>
+        </div>
+    </section>
+
+    <!-- Paketler -->
+    <section class="package-section">
+        <h2 class="section-title">Paketler</h2>
+        <div class="packages-container">
+            <div class="package-card">
+                <img src="{{ url_for('static', filename='images/S1.png') }}" alt="Standart Paket">
+                <h3>Standart Paket</h3>
+                <p>₺1000 / Gece</p>
+                <p>Temel olanaklarla konforlu bir konaklama deneyimi.</p>
+            </div>
+            <div class="package-card">
+                <img src="{{ url_for('static', filename='images/E1.png') }}" alt="Executive Paket">
+                <h3>Exclusive Paket</h3>
+                <p>₺2000 / Gece</p>
+                <p>Yüksek standartlarda oda, havuz ve spa imkanları.</p>
+            </div>
+            <div class="package-card">
+                <img src="{{ url_for('static', filename='images/D1.png') }}" alt="Deluxe Paket">
+                <h3>Deluxe Paket</h3>
+                <p>₺3500 / Gece</p>
+                <p>Özel süitler, VIP hizmetler ve sınırsız lüks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VTYS Otel. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        // Rezervasyon Butonuna Tıklandığında Yönlendirme
+        document.getElementById('reservation-btn').addEventListener('click', function() {
+            window.location.href = "{{ url_for('rezervasyon') }}";  // Yalnızca rezervasyon sayfasına yönlendiriyoruz
+        });
+    </script>
+
+</body>
+</html>

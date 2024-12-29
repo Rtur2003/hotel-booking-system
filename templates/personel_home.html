@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Sayfası</title>
+    <link rel="stylesheet" href="static/css/personel_style.css"> <!-- CSS dosyasını bağlantılandır -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="personel-container">
+        <header>
+            <h1>Personel Paneli</h1>
+            <nav>
+                <a href="/cikis" class="logout">Çıkış</a>
+            </nav>
+        </header>
+        
+        <div class="personel-panels">
+            <div class="personel-panel">
+                <h2>Aktif Misafirleri Görüntüle</h2>
+                <p>Şu an oteldeki aktif misafirleri görüntüleyebilirsiniz.</p>
+                <button onclick="location.href='/aktif_misafirler'">Görüntüle</button>
+            </div>
+
+            <div class="personel-panel">
+                <h2>Ödemeleri Kontrol Et</h2>
+                <p>Misafirlerin yaptığı ödemeleri kontrol edebilirsiniz.</p>
+                <button onclick="location.href='/odeme_kontrol'">Kontrol Et</button>
+            </div>
+
+            <div class="personel-panel">
+                <h2>Odaların Durumunu Görüntüle</h2>
+                <p>Odalardaki mevcut durumu görüntüleyebilirsiniz.</p>
+                <button onclick="location.href='/oda_durumlari'">Durumu Görüntüle</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/personel_script.js"></script> <!-- JavaScript dosyasını bağlantılandır -->
+</body>
+</html>

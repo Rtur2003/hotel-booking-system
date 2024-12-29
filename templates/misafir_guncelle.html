@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misafir Güncelle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/misafir_guncelle.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Aktif Misafirler</h1>
+        <table id="misafir-table">
+            <thead>
+                <tr>
+                    <th>MisafirID</th>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>Yaş</th>
+                    <th>Kimlik</th>
+                    <th>Giriş Tarihi</th>
+                    <th>Çıkış Tarihi</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for misafir in misafirler %}
+                    <tr id="misafir-{{ misafir.MisafirID }}">
+                        <td>{{ misafir.MisafirID }}</td>
+                        <td><input type="text" value="{{ misafir.Isim }}" class="misafir-field" id="isim-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><input type="text" value="{{ misafir.Soyisim }}" class="misafir-field" id="soyisim-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><input type="number" value="{{ misafir.Yas }}" class="misafir-field" id="yas-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><input type="text" value="{{ misafir.Kimlik }}" class="misafir-field" id="kimlik-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><input type="date" value="{{ misafir.GirisTarihi }}" class="misafir-field" id="giris-tarihi-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><input type="date" value="{{ misafir.CikisTarihi }}" class="misafir-field" id="cikis-tarihi-{{ misafir.MisafirID }}" data-id="{{ misafir.MisafirID }}"></td>
+                        <td><button class="delete-btn" data-id="{{ misafir.MisafirID }}">🗑️</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div id="error-message" style="color: red; display: none;"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/misafir_guncelle.js') }}"></script>
+</body>
+</html>

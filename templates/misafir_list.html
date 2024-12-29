@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misafir Listeleme</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/misafir_list.css') }}">
+</head>
+<body>
+    <h1>Misafir Listeleme</h1>
+    <form method="POST" action="/misafir_list">
+        <label for="start_date">Başlangıç Tarihi:</label>
+        <input type="date" id="start_date" name="start_date" value="2024-12-01">
+        <label for="end_date">Bitiş Tarihi:</label>
+        <input type="date" id="end_date" name="end_date" value="2024-12-05">
+        <button type="submit">Filtrele</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Misafir ID</th>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Yaş</th>
+                <th>Kimlik</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for misafir in misafirler %}
+            <tr>
+                <td>{{ misafir.MisafirID }}</td>
+                <td>{{ misafir.Isim }}</td>
+                <td>{{ misafir.Soyisim }}</td>
+                <td>{{ misafir.Yas }}</td>
+                <td>{{ misafir.Kimlik }}</td>
+                <td>{{ misafir.GirisTarihi }}</td>
+                <td>{{ misafir.CikisTarihi }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Başarılı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
+        <div class="bg-green-500 h-1 w-full"></div>
+        <div class="p-8 text-center">
+            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-green-600 text-5xl"></i>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ödeme Başarılı</h2>
+            
+            <p class="text-gray-600 mb-6 text-lg">Ödemeniz başarıyla tamamlandı. İşlem detayları aşağıdadır.</p>
+            
+            <div class="bg-gray-100 rounded-lg p-4 mb-6">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-700">Ödeme Tutarı:</span>
+                    <span id="odeme-tutar" class="font-semibold text-gray-900">{{ odeme_tutar }} TL</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-700">Tarih:</span>
+                    <span id="odeme-zamani" class="text-gray-900">{{ odeme_zamani }}</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-700">Ödeme Yöntemi:</span>
+                    <span id="odeme-yontemi" class="text-gray-900">{{ odeme_yontemi }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-700">Kart Numarası:</span>
+                    <span id="kart-numarasi" class="text-gray-900">**** **** **** 1234</span>
+                </div>
+            </div>
+            
+            <div class="flex space-x-4">
+                <a href="/" class="flex-1 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-home mr-2"></i> Ana Sayfaya Dön
+                </a>
+                <button id="makbuz-indir" class="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-file-invoice mr-2"></i> Makbuzu İndir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('makbuz-indir').addEventListener('click', function() {
+            // Makbuzu backend üzerinden indir
+            window.location.href = '/makbuz-indir';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oda Durumları</title>
+    <link rel="stylesheet" href="/static/css/oda_durumlari.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/oda_durumlari.js" defer></script>
+</head>
+<body>
+    <h1>Oda Durumları</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Oda ID</th>
+                <th>Oda Türü</th>
+                <th>Kapasite</th>
+                <th>Durum</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for oda in odalar %}
+            <tr>
+                <td>{{ oda.OdaID }}</td>
+                <td>{{ oda.OdaTuru }}</td>
+                <td>{{ oda.OdaKapasite }}</td>
+                <td>
+                    <select class="durum-select" data-oda-id="{{ oda.OdaID }}">
+                        <option value="Boş" {% if oda.Durum == 'Boş' %}selected{% endif %}>Boş</option>
+                        <option value="Dolu" {% if oda.Durum == 'Dolu' %}selected{% endif %}>Dolu</option>
+                    </select>
+                </td>
+                <td>{{ oda.Fiyat }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

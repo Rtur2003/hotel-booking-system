@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sayfası</title>
+    <link rel="stylesheet" href="static/css/admin_style.css"> <!-- CSS dosyasını bağlantılandır -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Admin Paneli</h1>
+            <nav>
+                <a href="/cikis" class="logout">Çıkış</a>
+            </nav>
+        </header>
+        
+        <div class="admin-panels">
+            <div class="admin-panel">
+                <h2>Kullanıcı Tanımlama ve Yetkilendirme</h2>
+                <p>Yeni kullanıcılar ekleyebilir ve mevcut kullanıcıları yetkilendirebilirsiniz.</p>
+                <a href="{{ url_for('kullanici_tanimla') }}" class="btn">Kullanıcı Tanımla</a>
+            </div>
+
+            <div class="admin-panel">
+                <h2>Kayıt Düzenleme</h2>
+                <p>Mevcut kayıtları düzenleyebilir veya silebilirsiniz.</p>
+                <button onclick="location.href='/kayit_duzenle'">Kayıt Düzenle</button>
+            </div>
+
+            <div class="admin-panel">
+                <h2>Raporlama</h2>
+                <p>Otelin genel durumu hakkında raporlar alabilirsiniz.</p>
+                <button onclick="location.href='/raporlama'">Raporları Görüntüle</button>
+            </div>
+        </div>
+    </div>
+    <div class="backup-buttons">
+        <button class="backup-btn" onclick="yedekle()">Yedekle</button>
+        <button class="restore-btn" onclick="yedektenDon()">Yedekten Dön</button>
+    </div>
+
+    <script src="static/js/admin_script.js"></script> <!-- JavaScript dosyasını bağlantılandır -->
+    <script>
+        async function yedekle() {
+            try {
+                const response = await fetch('/yedekle', { method: 'POST' });
+                const data = await response.json();
+                alert(data.message || data.error);
+            } catch (error) {
+                alert('Bir hata oluştu: ' + error.message);
+            }
+        }
+
+        async function yedektenDon() {
+            try {
+                const response = await fetch('/yedekten-don', { method: 'POST' });
+                const data = await response.json();
+                alert(data.message || data.error);
+            } catch (error) {
+                alert('Bir hata oluştu: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
+
+

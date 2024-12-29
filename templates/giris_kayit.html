@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otel Rezervasyon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Kayıt Formu -->
+        <div id="register-form">
+            <h2>Kayıt Ol</h2>
+            <form id="register">
+                <input type="text" id="reg-username" name="username" placeholder="Kullanıcı Adı" required><br><br>
+                <input type="password" id="reg-password" name="password" placeholder="Şifre" required><br><br>
+                <input type="password" id="reg-password2" name="password2" placeholder="Şifreyi Doğrula" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                <input type="tel" id="reg-tel" name="tel" placeholder="Telefon Numarası" required><br><br>
+                <button type="submit" id="register-btn">Kayıt Ol</button>
+                <p>Hesabınız var mı? <a href="#" onclick="toggleForms()">Giriş Yap</a></p>
+            </form>
+        </div>
+
+        <!-- Giriş Formu -->
+        <div id="login-form" style="display: none;">
+            <h2>Giriş Yap</h2>
+            <form id="login">
+                <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required><br><br>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Şifre" required>
+                    <span class="eye-icon" id="show-password" onclick="togglePasswordVisibility()">👁️</span> <!-- Göz simgesi -->
+                </div>
+                <button type="submit" id="login-btn">Giriş Yap</button>
+                <p>Hesabınız yok mu? <a href="#" onclick="toggleForms()">Kayıt Ol</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Düzenleme</title>
+    <link rel="stylesheet" href="static/css/kayit_duzenle_style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tools"></i> Kayıt Düzenleme</h1>
+        </header>
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-calendar-plus"></i>
+                <button onclick="location.href='/admin_rezervasyon'">Rezervasyon Düzenle</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-user-edit"></i>
+                <button onclick="location.href='/misafir_guncelle'">Misafir Bilgilerini Güncelle</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-bed"></i>
+                <button onclick="location.href='/oda_durumlari'">Oda Durumlarını Değiştir</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-users"></i>
+                <button onclick="location.href='/eski_misafirler'">Eski Misafirler</button>
+            </div>
+
+
+            <div class="box">
+                <i class="fas fa-credit-card"></i>
+                <button onclick="location.href='/odeme_durumlari'">Ödeme Durumlarını Değiştir</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/admin_script.js"></script>
+</body>
+</html>

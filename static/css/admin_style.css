@@ -1,0 +1,151 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Admin Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav .logout {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #ff4757;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav .logout:hover {
+    background-color: #e84118;
+}
+
+/* Admin Panels */
+.admin-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.admin-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.admin-panel:hover {
+    transform: translateY(-5px);
+}
+
+.admin-panel h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #007bff;
+}
+
+.admin-panel p {
+    font-size: 16px;
+    color: #666;
+}
+
+.admin-panel .btn,
+.admin-panel button {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.admin-panel .btn:hover,
+.admin-panel button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+}
+/* Admin Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Yedekleme butonlarının doğru şekilde konumlanması için relative konumlandırma */
+}
+
+/* Yedekleme ve Yedekten Dönme Butonları */
+.backup-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Sayfanın önünde kalması için yüksek bir z-index değeri */
+}
+
+.backup-btn,
+.restore-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.backup-btn:hover,
+.restore-btn:hover {
+    background-color: #0056b3;
+}
+
+.backup-btn {
+    margin-bottom: 10px;
+}
+

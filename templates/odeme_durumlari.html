@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Durumları</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/odeme_durumlari.css') }}">
+    <script src="{{ url_for('static', filename='js/odeme_durumlari.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ödeme Durumları</h1>
+        <table id="payment-table">
+            <thead>
+                <tr>
+                    <th>Ödeme ID</th>
+                    <th>Rezervasyon ID</th>
+                    <th>Kart Sahibi</th>
+                    <th>Ödeme Tutarı</th>
+                    <th>Ödeme Tarihi</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payment in payments %}
+                    <tr>
+                        <td>{{ payment.PaymentID }}</td>
+                        <td>{{ payment.RezervasyonID }}</td>
+                        <td>{{ payment.KartSahibi }}</td>
+                        <td>{{ payment.OdemeTutari }}</td>
+                        <td>{{ payment.OdemeTarihi }}</td>
+                        <td>
+                            <select class="payment-status" data-payment-id="{{ payment.PaymentID }}">
+                                <option value="Beklemede" {% if payment.Durum == 'Beklemede' %}selected{% endif %}>Beklemede</option>
+                                <option value="Başarılı" {% if payment.Durum == 'Başarılı' %}selected{% endif %}>Başarılı</option>
+                                <option value="Başarısız" {% if payment.Durum == 'Başarısız' %}selected{% endif %}>Başarısız</option>
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

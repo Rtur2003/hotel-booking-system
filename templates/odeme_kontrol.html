@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Kontrol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/odeme_kontrol.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Ödeme Kontrol</h1>
+        <nav>
+            <a href="{{ url_for('admin_home') }}" class="back-btn">Geri Dön</a>
+        </nav>
+    </header>
+
+    <div class="odeme-container">
+        <h2>Ödeme Listesi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ödeme ID</th>
+                    <th>Rezervasyon ID</th>
+                    <th>Kart Numarası</th>
+                    <th>Kart Sahibi</th>
+                    <th>Ödeme Tutarı</th>
+                    <th>Ödeme Tarihi</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for odeme in odemeler %}
+                <tr>
+                    <td>{{ odeme.PaymentID }}</td>
+                    <td>{{ odeme.RezervasyonID }}</td>
+                    <td>{{ odeme.KartNumarasi }}</td>
+                    <td>{{ odeme.KartSahibi }}</td>
+                    <td>{{ odeme.OdemeTutari }}</td>
+                    <td>{{ odeme.OdemeTarihi }}</td>
+                    <td>{{ odeme.Durum }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

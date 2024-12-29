@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlar</title>
+    <link rel="stylesheet" href="static/css/raporlama.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-pie"></i> Raporlar</h1>
+        </header>
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-users"></i>
+                <button onclick="location.href='/misafir_list'">Aktif Misafirler</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-calendar-check"></i>
+                <button onclick="location.href='/aktif_rezervasyonlar'">Aktif Rezervasyonlar</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-credit-card"></i>
+                <button onclick="location.href='/odemeler'">Ödemeler</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-bed"></i>
+                <button onclick="location.href='/oda_durumu'">Oda Durumu</button>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-user-shield"></i>
+                <button onclick="location.href='/rapor_rol'">Kullanıcı Rolleri</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/raporlama.js"></script>
+</body>
+</html>
+
+
